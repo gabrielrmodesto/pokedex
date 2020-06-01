@@ -1,6 +1,7 @@
 import { PokeapiService } from './../../services/pokeapi.service';
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
 	selector: 'app-list',
 	templateUrl: './list.component.html',
@@ -25,7 +26,9 @@ export class ListComponent implements OnInit {
 	}
 	constructor(private pokeList: PokeapiService) {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.pokeList.listAll();
+	}
 
 	selectPokemon(pkm) {
 		this.selectedPokemon = pkm;
